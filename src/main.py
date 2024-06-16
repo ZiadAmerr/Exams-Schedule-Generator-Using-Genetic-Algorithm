@@ -3,6 +3,7 @@ import collections
 import random as rn
 import copy
 from typing import List
+import time
 
 from numpy import concatenate
 from numpy import random
@@ -479,6 +480,7 @@ def runGA():
 
     # Running generations
     while True:
+        time.sleep(2)
         # Applying crossover and mutation
         population = apply_crossover(population)
         # Selection using roulette wheel
@@ -564,13 +566,6 @@ if __name__ == "__main__":
     population_size = random.randint(50, 150)
     crossover_probability = round(random.uniform(low=0.3, high=1.0), 1)
     mutation_probability = round(random.uniform(low=0.0, high=0.5), 1)
-
-    # Calculating MG and CS courses indexes
-    # for i in range(0, len(courses)):
-    #     if courses[i].courseCode[0] == 'M' and courses[i].courseCode[1] == 'G':
-    #         MG_indexes.append(i)
-    #     if courses[i].courseCode[0] == 'C' and courses[i].courseCode[1] == 'S':
-    #         CS_indexes.append(i)
 
     # Printing Initialized variables
     print('----- Generated Parameters -----')
